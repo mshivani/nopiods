@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 
+
 class PatientHistory extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,13 +11,27 @@ class PatientHistory extends StatelessWidget {
         title: Text("Patient History"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
-      ),
+          child: Column(
+        children: <Widget>[
+          Image.asset('../assets/images/patient0.jpg'),
+          ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(20.0),
+            children: <Widget>[
+              const Text('I\'m dedicating every day to you'),
+              const Text('Domestic life was never quite my style'),
+              const Text('When you smile, you knock me out, I fall apart'),
+              const Text('And I thought I was so smart'),
+            ],
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Go back!'),
+          )
+        ],
+      )),
     );
   }
 }
