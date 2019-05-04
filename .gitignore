@@ -11,6 +11,7 @@
 .gradle/
 pubspec.lock
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -27,7 +28,7 @@ pubspec.lock
 .packages
 .pub-cache/
 .pub/
-/build/
+*/build/
 
 # Android related
 **/android/**/gradle-wrapper.jar
