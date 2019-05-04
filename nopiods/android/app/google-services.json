@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "904834940766",
+    "firebase_url": "https://nopioid-239618.firebaseio.com",
+    "project_id": "nopioid-239618",
+    "storage_bucket": "nopioid-239618.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904834940766:android:23a19f31a7924e7d",
+        "android_client_info": {
+          "package_name": "com.company.nopioid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904834940766-iml1l0pnrdq4pvmn7m1tcj08k93td8r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHZIYvmeK5FmsMFBUfQSee4ZFXV8WZ-dE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904834940766-iml1l0pnrdq4pvmn7m1tcj08k93td8r0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

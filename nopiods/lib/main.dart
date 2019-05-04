@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -44,17 +46,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String _firstName = 'WHO';
+  String _lastName = '';
+
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+    Firestore.instance
+        .collection('users')
+        .snapshots()
+        .listen((data) =>
+            data.documents.forEach((doc)=> setState((){
+              _firstName = doc['firstName'];
+              _lastName = doc['lastName'];
+            }
+            )));
   }
 
   @override
@@ -65,13 +70,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: Container(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -91,11 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+        Row(
+        children: <Widget>[
+        Text('Deliver features faster', style: Theme.of(context).textTheme.display1)
+        ]),
             Text(
-              'You have pushed the button this many times:',
+              '$_firstName',
+              style: Theme.of(context).textTheme.display1,
             ),
             Text(
-              '$_counter',
+              '$_lastName',
               style: Theme.of(context).textTheme.display1,
             ),
           ],

@@ -1,4 +1,4 @@
-package com.example.nopiods;
+package com.company.nopioid;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
