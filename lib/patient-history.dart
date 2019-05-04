@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-
 class PatientHistory extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +10,7 @@ class PatientHistory extends StatelessWidget {
       body: Center(
           child: Column(
         children: <Widget>[
-          Image.asset('../assets/images/patient0.jpg'),
+          Image.asset('assets/images/patient0.jpg'),
           ListView(
             shrinkWrap: true,
             padding: const EdgeInsets.all(20.0),
