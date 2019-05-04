@@ -1,4 +1,4 @@
-package com.example.nopiods;
+package com.example.no_piods;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
