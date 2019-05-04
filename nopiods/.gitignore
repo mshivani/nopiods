@@ -9,6 +9,7 @@
 .history
 .svn/
 .gradle/
+pubspec.lock
 
 # IntelliJ related
 *.iml
