@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'patient-history.dart';
 import 'patient-search.dart';
 import 'login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,12 +50,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _firstName = 'WHO';
-  String _lastName = '';
-
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
+  String _firstName= '';
+  String _lastName= '';
 
+
+  void _incrementCounter() {
+    Firestore.instance
+        .collection('users')
+        .snapshots()
+        .listen((data) =>
+            data.documents.forEach((doc)=> setState((){
+              _firstName = doc['firstName'];
+              _lastName = doc['lastName'];
+            }
+            )));
+  }
 
   @override
   Widget build(BuildContext context) {
