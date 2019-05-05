@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PatientSearch()),
+                  MaterialPageRoute(builder: (context) => PatientSearch(title: 'ListView with Search')),                
                 );
               },
             ),
